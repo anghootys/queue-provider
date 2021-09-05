@@ -1,0 +1,33 @@
+{
+  "name": "queue-provider",
+  "version": "1.0.0",
+  "description": "A node js module provider for managing queues",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anghootys/queue-provider.git"
+  },
+  "keywords": [
+    "queue-provider",
+    "queueProvider",
+    "queue",
+    "provider",
+    "git",
+    "anghootys",
+    "module",
+    "nodejs",
+    "node",
+    "npm",
+    "package"
+  ],
+  "author": "Sajjad Anghooty",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anghootys/queue-provider/issues"
+  },
+  "homepage": "https://github.com/anghootys/queue-provider#readme"
+}
