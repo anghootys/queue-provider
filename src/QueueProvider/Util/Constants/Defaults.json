@@ -1,0 +1,6 @@
+{
+  "clusterCount": 1,
+  "asyncClusters": true,
+  "loadBalancing": true,
+  "finalSubscriber": null
+}
