@@ -5,7 +5,17 @@ class QueueProvider extends EventEmitter {
     constructor(options) {
         super();
 
-        const optionsProvider = new QueueProviderOptions(options);
+
+        this.options = new QueueProviderOptions(options);
+
+        this.createClusters();
+    }
+
+    createClusters() {
+        // TODO: Create channels if it is automatic creating
+        if (!this.options.autoClusterCreating) {
+            // TODO: loop over custom clusters
+        }
     }
 }
 

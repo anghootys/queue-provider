@@ -5,6 +5,9 @@ class QueueProviderOptions {
 
         this.defautls = defaults;
         this.clusterCount = options.clusterCount || defaults.clusterCount;
+        this.maxClusterCount = options.maxClusterCount || defaults.maxClusterCount;
+        this.autoClusterCreating = options.autoClusterCreating || defaults.autoClusterCreating;
+        this.clusters = options.clusters || defaults.clusters;
         this.asyncClusters = options.asyncClusters || defaults.asyncClusters;
         this.loadBalacing = options.loadBalacing || defaults.loadBalancing;
         this.finalSubscriber = options.finalSubscriber || defaults.finalSubscriber;

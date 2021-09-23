@@ -1,5 +1,8 @@
 {
   "clusterCount": 1,
+  "maxClusterCount": 20,
+  "autoClusterCreating": true,
+  "clusters": [],
   "asyncClusters": true,
   "loadBalancing": true,
   "finalSubscriber": null
