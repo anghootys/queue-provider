@@ -1,3 +1,5 @@
+const EventProvider = require("./EventProvider");
+
 class ClusterProvider {
     constructor(autoClusterCreate, clusters) {
 
@@ -13,7 +15,7 @@ class ClusterProvider {
     createCluster(clusterID, events) {
         this.clusters.push({
             id: clusterID,
-            events: [...events]
+            events: events && Array.isArray(events) && events.length ? events.map(event => new EventProvider(event)) : []
         })
     }
 
