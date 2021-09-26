@@ -6,4 +6,3 @@ test("this.defaults should be defaults", () => {
 
     expect(queueProviderOptions.defautls).toEqual(defaults);
 })
-

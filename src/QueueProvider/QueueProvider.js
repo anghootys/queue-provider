@@ -1,21 +1,19 @@
 const {EventEmitter} = require("events");
 const QueueProviderOptions = require("./QueueProviderOptions");
+const ClusterProvider = require("./ClusterProvider");
 
 class QueueProvider extends EventEmitter {
     constructor(options) {
         super();
 
-
         this.options = new QueueProviderOptions(options);
 
-        this.createClusters();
+        this.clusterProvider = this.createClusterProvider();
     }
 
-    createClusters() {
-        // TODO: Create channels if it is automatic creating
-        if (!this.options.autoClusterCreating) {
-            // TODO: loop over custom clusters
-        }
+    createClusterProvider() {
+        const {autoClusterCreating, clusters} = this.options;
+        return new ClusterProvider(autoClusterCreating, clusters);
     }
 }
 
