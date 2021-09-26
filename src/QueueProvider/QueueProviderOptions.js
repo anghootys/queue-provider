@@ -11,6 +11,7 @@ class QueueProviderOptions {
         this.asyncClusters = options.asyncClusters || defaults.asyncClusters;
         this.loadBalacing = options.loadBalacing || defaults.loadBalancing;
         this.finalSubscriber = options.finalSubscriber || defaults.finalSubscriber;
+        this.multipleCallbacks = options.multipleCallbacks || defaults.multipleCallbacks;
     }
 }
 

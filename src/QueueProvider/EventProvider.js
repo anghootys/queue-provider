@@ -1,5 +1,7 @@
+const defaultOptions = require("./Util/Constants/Defaults.json");
+
 class EventProvider {
-    constructor(event) {
+    constructor({event, options = defaultOptions}) {
         this.event = event;
     }
 }

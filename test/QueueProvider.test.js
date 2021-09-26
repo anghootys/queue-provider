@@ -1,12 +1,15 @@
 const QueueProvider = require("../src/QueueProvider/QueueProvider");
+const QueueProviderOptions = require("../src/QueueProvider/QueueProviderOptions");
 const ClusterProvider = require("../src/QueueProvider/ClusterProvider");
 
 test("this.clusterProvider should instance of clusterProvider", () => {
-    const queueProviderOptions = new QueueProvider({});
+    const queueProvider = new QueueProvider({});
+
+    const queueProviderOptions = new QueueProviderOptions({});
 
     const autoClusterCreate = false;
     const clusters = [];
-    const clusterProvider = new ClusterProvider(autoClusterCreate, clusters);
+    const clusterProvider = new ClusterProvider({autoClusterCreate, clusters, options: queueProviderOptions});
 
-    expect(queueProviderOptions.clusterProvider).toStrictEqual(clusterProvider);
+    expect(queueProvider.clusterProvider).toStrictEqual(clusterProvider);
 })

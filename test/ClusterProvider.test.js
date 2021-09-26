@@ -1,13 +1,14 @@
 const ClusterProvider = require("../src/QueueProvider/ClusterProvider");
+const QueueProviderOptions = require("../src/QueueProvider/QueueProviderOptions");
 const EventProvider = require("../src/QueueProvider/EventProvider");
 
 test("Cluster Provider should store clusters in its own cluster store", () => {
     const autoClusterCreating = false;
     const clusters = [];
-    const clusterProvider = new ClusterProvider(autoClusterCreating, clusters);
+    const clusterProvider = new ClusterProvider({autoClusterCreating, clusters, options: {}});
 
-    const event_01_callback =  () => console.log("Hello World");
-    const event_02_callback =  () => console.log("Free World");
+    const event_01_callback = () => console.log("Hello World");
+    const event_02_callback = () => console.log("Free World");
 
     const _autoClusterCreating = true;
     const _clusters = [
@@ -25,19 +26,29 @@ test("Cluster Provider should store clusters in its own cluster store", () => {
             ]
         }
     ];
-    const _clusterProvider = new ClusterProvider(_autoClusterCreating, _clusters);
+    const _clusterProvider = new ClusterProvider({
+        autoClusterCreate: _autoClusterCreating,
+        clusters: _clusters,
+        options: new QueueProviderOptions({})
+    });
 
     const eventProvider_01 = new EventProvider(
         {
-            id: "Event_01",
-            cb: event_01_callback
+            event: {
+                id: "Event_01",
+                cb: event_01_callback
+            },
+            options: new QueueProviderOptions({})
         }
     );
 
     const eventProvider_02 = new EventProvider(
         {
-            id: "Event_02",
-            cb: event_02_callback
+            event: {
+                id: "Event_02",
+                cb: event_02_callback
+            },
+            options: new QueueProviderOptions({})
         }
     );
 

@@ -13,7 +13,7 @@ class QueueProvider extends EventEmitter {
 
     createClusterProvider() {
         const {autoClusterCreating, clusters} = this.options;
-        return new ClusterProvider(autoClusterCreating, clusters);
+        return new ClusterProvider({autoClusterCreating, clusters, options: this.options});
     }
 }
 
